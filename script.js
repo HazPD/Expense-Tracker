@@ -45,7 +45,7 @@ function Display(name, amount, date, id, category) {
 
     // Updating table
     Row.innerHTML = `
-                <td>${name}</td>
+                <td>${name.charAt(0).toUpperCase() + name.slice(1)}</td>
                 <td>${amount}</td>
                 <td>${date}</td>
                 <td>${category}</td>
