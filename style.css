@@ -133,11 +133,13 @@ body {
         outline: none;
     }
     .data-name:hover,
-    .data-amount:hover {
+    .data-amount:hover,
+    #category:hover {
         border-color: #007bff;
     }
     .data-name:focus,
-    .data-amount:focus {
+    .data-amount:focus,
+    #category:focus {
         border-color: #007bff;
         box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
