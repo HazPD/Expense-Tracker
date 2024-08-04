@@ -38,7 +38,12 @@ var expenseChart = new Chart(ctx, {
             y: {
                 beginAtZero: true,
                 min: 0,
-                suggestedMax: 3000,
+                suggestedMax: 2000,
+            },
+            x: {
+                grid: {
+                    display: false,
+                },
             },
         },
     },
