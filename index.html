@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>FBZ</title>
+</head>
+<body>
+    <div class="container">
+        <div class="nav-UI">
+            <div class="fbz">
+                <span>Hello! I'm FBZ</span>
+            </div>
+
+            <div class="description">
+                <span> I'm an Expense tracker made by HAZ.</span>  
+            </div>
+
+            <div class="shout">
+                <span>This project wouldn't be possible without the help of Wafflegum.</span>
+            </div>
+
+            <div class="socials">
+                <div id="socmed">
+                    <span>Socials:</span>
+                </div>
+                <div id="socLinks-container">
+                    <div id="logos">
+                        <img src="Assets/icons8-github-64.png"/>
+                        <img src="Assets/icons8-github-64.png"/>
+                    </div>
+                    <div id="links">
+                        <a href="https://github.com/HazPD" target="_blank">Haz</a>
+                        <a href="https://github.com/Wafflegum" target="_blank">Wafflegum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="data-UI">
+            <div class="add-expense">
+                <form id="expense-form" autocomplete="off">
+                    <div id="expense-name">                    
+                        <input type = "text" 
+                               name = "Expense Name" 
+                               placeholder= "Enter expense name"
+                               class = "data-name"></input>
+                    </div>
+                    <div id="expense-amount">
+                        <input type = "number" 
+                               name = "Expense Amount" 
+                               placeholder= "Enter expense amount"
+                               class = "data-amount"></input>
+                    </div>
+                    <div id="expense-category">
+                        <select name="category" id="category">
+                            <option id="firstOption" disabled selected hidden>Choose category</option>
+                            <option value="Utility">Utility</option>
+                            <option value="Food">Food</option>
+                            <option value="Wants">Wants</option>
+                        </select>
+                    </div>                   
+                    <button type="submit"> add </button>
+                </form> 
+                
+            </div>
+            <div class="charts">
+                <canvas id="expenseChart"></canvas>
+            </div>
+            
+            <div class="data-write">
+                <button id="Save" onclick="tableToCSV()">Export</button>
+                <button>Load</button>
+                <button id="reset">Reset</button>
+            </div>
+        </div>
+
+        <div class="output-UI">
+            <div class="table">
+                <table cellpadding="2">
+                    <thead>
+                        <tr>
+                            <th>Expense name</th>
+                            <th>Amount</th>                           
+                            <th>Date</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="TableBody"></tbody>
+                </table>
+            </div>
+
+            <div class="total">
+                <div id="total-amount">
+                    <span>Total: </span>
+                    <span id="TotalDisplay"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="containerBody">
+        <div class="prompt-container">
+            <div id="question">
+                <span>Are you sure you want to reset data? Everything will be removed.</span>    
+            </div>
+            <div id="choices">
+                <button id="yes">Yes</button>
+                <button id="cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+<script src="charts.js"></script>
+</html>
