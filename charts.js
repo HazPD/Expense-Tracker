@@ -1,12 +1,10 @@
 var table = document.getElementById("TableBody");
-
-// Extract the data
-var dates = [];
+var categories = [];
 var amounts = [];
 
 // Loop through table rows (skip the header)
 for (var i = 0, row; (row = table.rows[i]); i++) {
-    dates.push(row.cells[2].innerText);
+    categories.push(row.cells[3].innerText);
     amounts.push(parseFloat(row.cells[1].innerText));
 }
 
@@ -15,15 +13,23 @@ var ctx = document.getElementById("expenseChart").getContext("2d");
 var expenseChart = new Chart(ctx, {
     type: "bar", // or 'bar', 'pie', etc.
     data: {
-        labels: dates,
+        labels: categories,
         datasets: [
             {
-                label: "Expense Cost per day",
-                data: dates,
-                backgroundColor: "rgba(63, 183, 235, 1)",
-                borderColor: "rgba(63, 183, 235,1)",
+                label: "Expenses",
+                data: amounts,
+                backgroundColor: [
+                    "rgba(63, 183, 235, 1)",
+                    "rgba(251, 192, 147,1)",
+                    "rgba(255, 0, 0,1)",
+                ],
+                borderColor: [
+                    "rgba(63, 183, 235,1)",
+                    "rgba(251, 192, 147,1)",
+                    "rgba(255, 0, 0,1)",
+                ],
                 borderWidth: 1,
-                barThickness: 20,
+                barThickness: 30,
             },
         ],
     },
@@ -39,25 +45,24 @@ var expenseChart = new Chart(ctx, {
 });
 
 // CHART UPDATE
-
 function updateChart() {
     var aggregatedData = {};
     for (var i = 0, row; (row = table.rows[i]); i++) {
-        var date = row.cells[2].innerText;
+        var category = row.cells[3].innerText;
         var amount = parseFloat(row.cells[1].innerText);
 
-        if (aggregatedData[date]) {
-            aggregatedData[date] += amount;
+        if (aggregatedData[category]) {
+            aggregatedData[category] += amount;
         } else {
-            aggregatedData[date] = amount;
+            aggregatedData[category] = amount;
         }
     }
 
     // Separate the keys and values into arrays
-    var dates = Object.keys(aggregatedData);
+    var categories = Object.keys(aggregatedData);
     var amounts = Object.values(aggregatedData);
 
-    expenseChart.data.labels = dates;
+    expenseChart.data.labels = categories;
     expenseChart.data.datasets[0].data = amounts;
     expenseChart.update();
 }

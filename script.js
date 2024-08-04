@@ -30,7 +30,8 @@ function Load() {
                 ExpenseData.name,
                 ExpenseData.amount,
                 ExpenseData.date,
-                ExpenseData.id
+                ExpenseData.id,
+                ExpenseData.category
             );
         });
     }

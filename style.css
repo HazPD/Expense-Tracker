@@ -180,7 +180,7 @@ body {
     box-shadow: 5px 5px #808080;
     border-radius: 5px;
     border: 1px solid black;
-    background: white;
+    background: #ffffff;
     button {
         height: 2em;
         width: 8em;
@@ -219,6 +219,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin-bottom: 20px;
+    border: none;
 }
 
 .table th {
@@ -229,12 +230,23 @@ body {
 }
 .table th,
 tr {
-    background: white;
+    background: #3fb7eb;
     border-spacing: 5px;
     padding: 10px;
-    border: 1px solid #ddd;
+    border: none;
     text-align: center;
     line-height: 30px;
+}
+
+.delete {
+    border-radius: 5px;
+    width: 5em;
+    height: 2em;
+}
+
+.delete:hover {
+    background: red;
+    color: white;
 }
 
 /* TOTAL UI */
@@ -242,6 +254,7 @@ tr {
     padding: 1em;
     margin-top: auto;
     height: 10%;
+    text-align: right;
 }
 
 #total-amount span {
