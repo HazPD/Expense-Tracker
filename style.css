@@ -240,6 +240,10 @@ tr {
     line-height: 30px;
 }
 
+.table tr {
+    font-weight: 500;
+}
+
 .delete {
     border-radius: 5px;
     width: 5em;
