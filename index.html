@@ -14,13 +14,13 @@
             <div class="fbz">
                 <span>Hello! I'm FBZ</span>
             </div>
-
+            
             <div class="description">
-                <span> I'm an Expense tracker made by HAZ.</span>  
+                <p> I'm an Expense tracker made by HAZ.</p>  
             </div>
-
+            <section>
             <div class="shout">
-                <span>This project wouldn't be possible without the help of Wafflegum.</span>
+                <span>This project is made with help of Wafflegum.</span>
             </div>
 
             <div class="socials">
@@ -38,6 +38,7 @@
                     </div>
                 </div>
             </div>
+            </section>
         </div>
 
         <div class="data-UI">
@@ -70,9 +71,10 @@
             <div class="charts">
                 <canvas id="expenseChart"></canvas>
             </div>
-            
+            <input type="file" id="csvFileInput" accept=".csv" style="display: none;" />
             <div class="data-write">
-                <button id="Save" onclick="tableToCSV()">Export</button>
+                <button id="Save">Export</button>
+                <button id="Import">Import</button>
                 <button id="reset">Reset</button>
             </div>
         </div>
@@ -115,4 +117,5 @@
 </body>
 <script src="script.js"></script>
 <script src="charts.js"></script>
+<script src="data.js"></script>
 </html>

@@ -57,6 +57,7 @@ body {
     font-size: 1.5em;
     font-weight: 600;
     color: black;
+    padding-top: 5em;
 }
 
 .socials {
@@ -98,7 +99,7 @@ body {
 }
 /* DATA UI */
 .data-UI {
-    width: 60%;
+    width: 70%;
     height: 100%;
     background: #e3fdff;
     display: flex;
@@ -332,9 +333,4 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
-}
-
-.shout,
-.socials {
-    display: none;
 }
