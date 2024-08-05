@@ -65,6 +65,7 @@ function Display(name, amount, date, id, category) {
     });
 }
 // EVENT LISTENER FOR ADD EXPENSE BUTTON
+
 document
     .getElementById("expense-form")
     .addEventListener("submit", function (event) {
