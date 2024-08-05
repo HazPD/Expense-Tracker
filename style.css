@@ -29,11 +29,15 @@ body {
     border-radius: 8px;
     border: 1px solid #000000;
     box-shadow: 5px 5px #808080;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .fbz {
-    margin: 1em;
-    height: 10%;
+    height: 5em;
+    width: 10em;
     line-height: 3em;
     text-align: left;
     font-size: 30px;
@@ -42,36 +46,31 @@ body {
 }
 
 .description {
-    margin: 0 1em 0 1em;
-    height: 10%;
+    height: fit-content;
     text-align: left;
     font-size: 1.5em;
     font-weight: 600;
     color: black;
+    padding-bottom: 5em;
 }
 
 .shout {
-    margin: 0 1em 0 1em;
-    height: 10%;
+    height: fit-content;
     text-align: left;
     font-size: 1.5em;
     font-weight: 600;
     color: black;
-    padding-top: 5em;
-    display: none;
+    padding-bottom: 5em;
 }
 
 .socials {
-    margin: 0em 1em 0 1em;
-    padding-top: 3em;
-    height: 10%;
+    height: fit-content;
     text-align: left;
     font-size: 1.5em;
     font-weight: 600;
     color: black;
     display: flex;
     flex-direction: column;
-    display: none;
 }
 
 #socLinks-container {
@@ -225,6 +224,29 @@ body {
     border-collapse: collapse;
     margin-bottom: 20px;
     border: none;
+}
+
+.filter {
+    padding-left: 2em;
+    height: 4em;
+    #filterCategory {
+        padding: 6px;
+        height: 3.5em;
+        border: 3px solid #a8a8a8;
+        border-radius: 5px;
+        font-size: 15px;
+        color: #000000;
+        outline: none;
+        background: #37a0ca00;
+        font-weight: bold;
+        border: none;
+    }
+    #filterForm {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
 }
 
 .table th {
