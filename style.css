@@ -58,6 +58,7 @@ body {
     font-weight: 600;
     color: black;
     padding-top: 5em;
+    display: none;
 }
 
 .socials {
@@ -70,6 +71,7 @@ body {
     color: black;
     display: flex;
     flex-direction: column;
+    display: none;
 }
 
 #socLinks-container {

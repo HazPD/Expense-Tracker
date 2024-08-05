@@ -57,19 +57,16 @@ function importCSV(event) {
                 .map((row) => row.split(",").map((cell) => cell.trim()));
 
             let tableBody = document.querySelector("#TableBody");
-            tableBody.innerHTML = ""; // Clear existing table data
+            tableBody.innerHTML = "";
 
-            // Skip the first row (header) and process the rest
             rows.slice(1).forEach((row, rowIndex) => {
                 if (row.length > 1) {
-                    // Check if row has at least one cell
                     let newRow = tableBody.insertRow();
                     row.forEach((cell, cellIndex) => {
                         let newCell = newRow.insertCell(cellIndex);
                         newCell.innerText = cell;
                     });
 
-                    // Add the Action cell with a Delete button
                     let actionCell = newRow.insertCell();
                     let deleteButton = document.createElement("button");
                     deleteButton.innerText = "Delete";
