@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="https://img.icons8.com/?size=100&id=JcnJH7n6PdCt&format=png&color=000000" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>FBZ</title>
 </head>
 <body>
@@ -61,7 +62,7 @@
                             <option value ="" id="firstOption" disabled selected hidden>Choose category</option>
                             <option value="Utility">Utility</option>
                             <option value="Food">Food</option>
-                            <option value="Wants">Wants</option>
+                            <option value="Others">Others</option>
                         </select>
                     </div>                   
                     <button type="submit"> add </button>
@@ -80,18 +81,18 @@
         </div>
 
         <div class="output-UI">
-            <!--
+            
             <div class="filter">
                 <form id="filterForm">
-                <select id="filterCategory">
-                    <option value ="" id="firstFilter" disabled selected hidden>Choose category</option>
-                    <option>Utility</option>
-                    <option>Food</option>
-                    <option>Wants</option>
-                </select>
+                    <div id="filterButton">
+                        <button type="button" data-filter="All" id="All">All</button>
+                        <button type="button" data-filter="Utility" id="otherButton">Utility</button>
+                        <button type="button" data-filter="Food" id="otherButton">Food</button>
+                        <button type="button" data-filter="Others" id="otherButton">Others</button>
+                    </div>
                 </form>
             </div>
-            -->
+            
             
             <div class="table">
                 <table cellpadding="2">
