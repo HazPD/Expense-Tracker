@@ -38,60 +38,6 @@ dl.addEventListener("click", () => {
 
 // Function import
 
-/*function importCSV(event) {
-    let file = event.target.files[0];
-    console.log("File selected:", file);
-
-    if (!file) {
-        alert("Please select a CSV file to import.");
-        return;
-    }
-
-    let reader = new FileReader();
-    reader.onload = function (event) {
-        try {
-            let csvContent = event.target.result;
-            console.log("CSV content:", csvContent);
-            let rows = csvContent
-                .split("\n")
-                .map((row) => row.split(",").map((cell) => cell.trim()));
-
-            let tableBody = document.querySelector("#TableBody");
-            tableBody.innerHTML = "";
-
-            rows.slice(1).forEach((row, rowIndex) => {
-                if (row.length > 1) {
-                    let newRow = tableBody.insertRow();
-                    row.forEach((cell, cellIndex) => {
-                        let newCell = newRow.insertCell(cellIndex);
-                        newCell.innerText = cell;
-                    });
-
-                    let actionCell = newRow.insertCell();
-                    let deleteButton = document.createElement("button");
-                    deleteButton.innerText = "Delete";
-                    deleteButton.onclick = function () {
-                        newRow.remove();
-                    };
-                    actionCell.appendChild(deleteButton);
-
-                    updateChart();
-                    UpdateTotalAmount();
-                    Save();
-                }
-            });
-        } catch (error) {
-            console.error("Error parsing CSV:", error);
-        }
-    };
-
-    reader.onerror = function () {
-        console.error("Error reading file.");
-    };
-
-    reader.readAsText(file);
-} */
-
 function importCSV(event) {
     let file = event.target.files[0];
     console.log("File selected:", file);
@@ -117,14 +63,13 @@ function importCSV(event) {
                 if (row.length > 1) {
                     const [name, amount, date, category] = row;
                     const expense = {
-                        id: count + 1 + rowIndex, // Ensure unique ID
+                        id: count + 1 + rowIndex,
                         name: name,
                         amount: parseFloat(amount),
                         date: date,
                         category: category,
                     };
 
-                    // Display the expense
                     Display(
                         expense.name,
                         expense.amount,
@@ -133,7 +78,6 @@ function importCSV(event) {
                         expense.category
                     );
 
-                    // Add the expense to the array
                     expenses.push(expense);
                 }
             });

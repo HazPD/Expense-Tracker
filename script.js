@@ -10,7 +10,9 @@ function UpdateTotalAmount() {
     expenses.forEach((el) => {
         sum += el.amount;
     });
-    totalAmount.textContent = sum;
+    totalAmount.textContent = sum
+        .toFixed(2)
+        .replace(/\d(?=(\d{3})+\.)/g, "$&,");
 }
 
 // Function for save
