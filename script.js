@@ -43,12 +43,17 @@ function Display(name, amount, date, id, category) {
     const expenseBody = document.getElementById("TableBody");
     const Row = document.createElement("tr");
 
+    const validCategory = ["Utility", "Food", "Others"].includes(category)
+        ? category
+        : "Unknown";
+    Row.setAttribute("data-category", validCategory);
+
     // Updating table
     Row.innerHTML = `
                 <td>${name.charAt(0).toUpperCase() + name.slice(1)}</td>
                 <td>${amount}</td>
                 <td>${date}</td>
-                <td>${category}</td>
+                <td>${validCategory}</td>
                 <td><button class="delete">Delete</button></td>
             `;
 
@@ -105,3 +110,47 @@ document
             alert("Please enter both name and amount and choose category");
         }
     });
+
+// Filter buttons
+
+const buttons = document.querySelectorAll("#filterButton button");
+
+buttons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        buttons.forEach((btn) => btn.classList.remove("selected"));
+        buttons.forEach((btn) => btn.classList.add("unselected"));
+
+        this.classList.add("selected");
+        this.classList.remove("unselected");
+
+        filterTable(this.getAttribute("data-filter"));
+    });
+});
+
+function filterTable(filter) {
+    console.log(`Filtering for category: ${filter}`);
+    const rows = document.querySelectorAll("#TableBody tr");
+    rows.forEach((row) => {
+        const category = row.getAttribute("data-category");
+        console.log(`Row category: ${category}, Filter: ${filter}`);
+        if (filter === "All" || category === filter) {
+            row.style.display = "table-row";
+        } else {
+            row.style.display = "none";
+        }
+    });
+
+    updateFilteredTotal(filter);
+}
+
+function updateFilteredTotal(filter) {
+    let total = 0;
+    expenses.forEach((expense) => {
+        if (filter === "All" || expense.category === filter) {
+            total += expense.amount;
+        }
+    });
+    totalAmount.textContent = total.toFixed(2);
+}

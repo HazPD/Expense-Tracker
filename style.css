@@ -225,27 +225,64 @@ body {
     margin-bottom: 20px;
     border: none;
 }
-
+/*
 .filter {
     padding: 0.5em;
     height: 4em;
     #filterCategory {
         padding: 6px;
         height: 3.5em;
-        border: 3px solid #a8a8a8;
         border-radius: 5px;
         font-size: 15px;
-        color: #000000;
         outline: none;
-        background: #37a0ca00;
         font-weight: bold;
         border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: transparent;
+        #filterCaterogy::after {
+            content: "\25BC";
+            pointer-events: none;
+        }
     }
     #filterForm {
         display: flex;
         gap: 10px;
         margin-bottom: 10px;
         margin-top: 10px;
+    }
+}*/
+
+#filterForm {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 1em;
+}
+
+#filterButton {
+    display: flex;
+    gap: 1.5em;
+    button {
+        width: 4em;
+        height: 2em;
+        outline: none;
+        border: none;
+        font-weight: bold;
+        background: none;
+        transition: opacity 0.3s ease;
+    }
+    button:hover {
+        transform: scale(1.3);
+        border: 1px solid black;
+    }
+    #All:focus {
+        transform: scale(1.3);
+        border: none;
+    }
+    #otherButton:focus {
+        transform: scale(1.3);
+        border: 1px solid black;
     }
 }
 
