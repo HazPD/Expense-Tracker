@@ -396,8 +396,13 @@ input[type="number"] {
 }
 
 @media (max-width: 720px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
     .container {
         margin: 1em;
+        padding-right: 4em;
         width: 100%;
         flex-direction: column;
     }
@@ -406,7 +411,6 @@ input[type="number"] {
     .data-UI,
     .output-UI {
         width: 100%;
-        margin-bottom: 1em;
         flex: 1;
     }
 
